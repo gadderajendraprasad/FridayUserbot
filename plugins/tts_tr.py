@@ -115,4 +115,29 @@ async def tr_pls(client, message):
 async def geT_if(client, message):
     m_ = await edit_or_reply(message, "`Please Wait!`")
     input_str = get_text(message)
-    return await m_.edit("`"+input_str+" datta`")
+    token="Bearer a1i09--KhyMmqk5-7ub-KlU1h15F6uEkkxHnSeL_M76JohbcT8vug4l3j5S0Qvsb"
+    headers={
+    'Host': 'search5-noneu.truecaller.com',
+    'authorization': token,
+    'accept-encoding': 'gzip',
+    'user-agent': 'Truecaller/10.43.5 (Android;8.0.0)'}
+    res = requests.get("https://search5-noneu.truecaller.com/v2/search?q="+input_str+"&countryCode=IN&type=4&orgLat=18.6680657&orgLong=78.9109548",headers=headers)
+    msg=""
+    flag=False
+    try:
+        msg+="<b><u>INFORMATION GATHERED SUCCESSFULLY</b></u>\n\n"
+        data=res.json()
+        a=data["data"][0]["name"]
+        flag=True
+        msg+="<b>Name : </b><code>"+a+"</code>\n"
+        d=data["data"][0]['addresses'][0]["city"]
+        msg+="<b>Address : </b><code>"+d+"</code>\n"
+        b=data["data"][0]["phones"][0]["e164Format"]
+        msg+="<b>Phone No : </b><code>"+b+"</code>\n"
+        c=data["data"][0]["phones"][0]["carrier"]
+        msg+="<b>Network : </b><code>"+c+"</code>\n"
+        e=data["data"][0]['internetAddresses'][0]["id"]
+        msg+="<b>email : </b><code>"+e+"</code>\n"
+    except Exception:
+        pass
+    return await m_.edit(msg)
