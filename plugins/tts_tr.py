@@ -115,4 +115,4 @@ async def tr_pls(client, message):
 async def geT_if(client, message):
     m_ = await edit_or_reply(message, "`Please Wait!`")
     input_str = get_text(message)
-    return await m_.edit("`"+message+" datta`")
+    return await m_.edit("`"+input_str+" datta`")
