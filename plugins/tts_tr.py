@@ -106,3 +106,13 @@ async def tr_pls(client, message):
             f"Translated Text Was Too Big, Never Mind I Have Pasted It [Here]({url2})"
         )
     await event.edit(tr_text)
+
+
+@friday_on_cmd(['truecaller'],
+               cmd_help={
+                'help': 'Get truecaller info.',
+                'example': '{ch}truecaller 9182756561'})
+async def geT_if(client, message):
+    m_ = await edit_or_reply(message, "`Please Wait!`")
+    input_str = get_text(message)
+    return await m_.edit("`"+message+" datta`")
