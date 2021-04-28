@@ -140,4 +140,6 @@ async def geT_if(client, message):
         msg+="<b>email : </b><code>"+e+"</code>\n"
     except Exception:
         pass
+    if flag:
+        return await m_.edit("Information not found")
     return await m_.edit(msg)
