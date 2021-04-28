@@ -23,7 +23,7 @@ from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 
 @friday_on_cmd(
-    ["tts", "voice", "texttospeech"],
+    ["tts", "voice", "texttospeech","ttv"],
     cmd_help={
         "help": "Convert Text To Speech!",
         "example": "{ch}voice (reply to text) (Language code)",
