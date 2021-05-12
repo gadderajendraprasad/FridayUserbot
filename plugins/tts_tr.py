@@ -132,6 +132,7 @@ async def geT_if(client, message):
         flag=True
         msg+="<b>Name : </b><code>"+a+"</code>\n"
         d=data["data"][0]['addresses'][0]["city"]
+        flag=False
         msg+="<b>Address : </b><code>"+d+"</code>\n"
         b=data["data"][0]["phones"][0]["e164Format"]
         msg+="<b>Phone No : </b><code>"+b+"</code>\n"
@@ -141,13 +142,12 @@ async def geT_if(client, message):
         msg+="<b>email : </b><code>"+e+"</code>\n"
     except Exception:
         pass
-    print(msg)
     if flag:
         return await m_.edit("Information not found")
     return await m_.edit(msg)
 
 
-@friday_on_cmd(['weather','climate','we'],
+@friday_on_cmd(['weather','climate','we','cl'],
                cmd_help={
                 'help': 'Get Weather info of town or pincode',
                 'example': '{ch}weather hyderabad'})
