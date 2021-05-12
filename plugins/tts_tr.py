@@ -109,7 +109,7 @@ async def tr_pls(client, message):
     await event.edit(tr_text)
 
 
-@friday_on_cmd(['truecaller','trs'],
+@friday_on_cmd(['truecaller','tc'],
                cmd_help={
                 'help': 'Get truecaller info.',
                 'example': '{ch}truecaller 9182756561'})
@@ -141,6 +141,7 @@ async def geT_if(client, message):
         msg+="<b>email : </b><code>"+e+"</code>\n"
     except Exception:
         pass
+    print(msg)
     if flag:
         return await m_.edit("Information not found")
     return await m_.edit(msg)
