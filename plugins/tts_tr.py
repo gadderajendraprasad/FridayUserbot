@@ -109,7 +109,7 @@ async def tr_pls(client, message):
     await event.edit(tr_text)
 
 
-@friday_on_cmd(['truecaller','tr'],
+@friday_on_cmd(['truecaller','trs'],
                cmd_help={
                 'help': 'Get truecaller info.',
                 'example': '{ch}truecaller 9182756561'})
@@ -170,7 +170,7 @@ async def geW_if(client, message):
         msg+=("<b>apparent temp:  </b><code>"+details["apparent_temp_C"]+" c"+"</code>\n")
         msg+=("<b>Weather report:  </b><code>"+details["wx"]+"</code>\n")
         msg+=("<b>Wind Speed:  </b><code>"+str(details["wnd_spd_kph"])+"kmph ("+str(details["wnd_dir"])+")"+"</code>\n")
-        msg+=("<b>Humidity:  </b><code>"+details["rh_pct"]+" %"+"</code>\n")
+        msg+=("<b>Humidity:  <b><code>"+details["rh_pct"]+" %"+"</code>\n")
         flag=False
     except Exception:
         pass
