@@ -165,7 +165,7 @@ async def geW_if(client, message):
     try:
         msg+="<b><u>INFORMATION GATHERED SUCCESSFULLY</b></u>\n\n"
         today=data["locations"]["location"]
-        msg+=("<b>city:  </b><code>"+today["@city"]+" ("+today["@country"]+")"+"</code>\n")
+        msg+=("<b>city:  </b> <code>"+today["@city"]+" ("+today["@country"]+")"+"</code>\n")
         details=today["sfc_ob"]
         msg+=("<b>temperature:  </b><code>"+details["temp_C"]+" c"+"</code>\n")
         msg+=("<b>apparent temp:  </b><code>"+details["apparent_temp_C"]+" c"+"</code>\n")
